@@ -1,0 +1,81 @@
+.sidebar-container {
+  min-height: 100vh;
+  min-width: 301px !important;
+  background: #1F1F24 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding-left: 58px;
+}
+
+.sidebar-menu {
+  background-color: #1F1F24!important;
+  color: #FFFFFFFF;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #1F1F24;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  padding-left: 0px !important;
+  color: #FFFFFFFF !important;
+}
+
+.ant-menu-sub.ant-menu-inline {
+  padding-left: 40px !important;
+  background: #1F1F24;
+  border: 0;
+  margin-left: -20px !important;
+  border-radius: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  box-shadow: none;
+  color: #FFFFFF66 !important;
+}
+
+.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+  color: #FFFFFF66;
+  padding-left: 0px !important;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item {
+  margin-bottom: 43px;
+  margin-top: 43px;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  padding-left: 0px !important;
+  color: #FFFFFF66;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item:hover {
+  margin-bottom: 43px;
+  margin-top: 43px;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #FFFFFFFF;
+}
+
+/* .ant-menu:not(.ant-menu-horizontal) .ant-menu-item, .ant-menu-sub.ant-menu-inline {
+
+} */
+
+.app-logo {
+  width: 64.06px;
+  height: 46.59px;
+  margin-top: 44px;
+  margin-bottom: 55.76px;
+}
+
+.label-span {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-19) var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal bold 14px/19px Manrope;
+  letter-spacing: 0px;
+  color: #FFFFFF66;
+  opacity: 1;
+}

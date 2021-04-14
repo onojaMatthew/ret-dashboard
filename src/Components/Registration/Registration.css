@@ -1,0 +1,126 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope');
+
+.reg-container {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 100vh;
+  background: #262626 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+.reg-container img {
+  width: 120px !important;
+  height: 90px;
+}
+
+.ui.input {
+  margin: 0;
+  padding: 0px !important;
+  width: 100%;
+  flex: 1 0 auto;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  text-align: left;
+  line-height: 60px;
+  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  padding: .67857143em 1em;
+  background: #fff;
+  border: none;
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  transition: box-shadow .1s ease,border-color .1s ease;
+  box-shadow: none;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 32px;
+}
+
+.facebook-button {
+  height: 60px i !important;
+  background: #3B5998 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+  margin-bottom: 15px !important;
+  box-shadow: none !important;
+}
+
+.google-button {
+  height: 60px !important;
+  background: #F8F8F8 0% 0% no-repeat padding-box !important;
+  border-radius: 6px !important;
+  opacity: 1;
+  margin-bottom: 15px !important;
+  box-shadow: none !important;
+}
+
+.apple-button {
+  height: 60px !important;
+  background: #000 0% 0% no-repeat padding-box !important;
+  border-radius: 6px !important;
+  opacity: 1;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 15px !important;
+  box-shadow: none !important;
+}
+
+.apple-button:hover {
+  height: 60px !important;
+  background: #000 0% 0% no-repeat padding-box !important;
+  border-radius: 6px !important;
+  opacity: 1;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 15px !important;
+  box-shadow: none !important;
+}
+
+#country-code {
+  border-top-left-radius: 0px!important;
+  border-bottom-left-radius: 0px!important;
+  border-top-right-radius: 4px!important;
+  border-bottom-right-radius: 4px!important;
+  border-right: 2px solid #262626;
+  border-left-color: transparent!important;
+}
+
+.ui.compact.selection.dropdown {
+  min-width: 80px!important;
+  border-bottom-right-radius: 0!important;
+  border-top-right-radius: 0!important;
+}
+
+.signup-button {
+  width: 100%;
+  height: 60px;
+  background: #F05366 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+  color: #fff;
+}
+
+.signin-button {
+  width: 100%;
+  height: 60px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 2px dashed #00000066;
+  border-radius: 6px;
+  opacity: 1;
+  color: #000;
+}
+
+.terms {
+  color: #F05366;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 30px;
+}
