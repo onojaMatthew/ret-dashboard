@@ -1,0 +1,85 @@
+.series-page-title {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 26px/36px var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-000000);
+  text-align: left;
+  font: normal normal normal 26px/36px Manrope;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.series-second-level-text {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-12)/var(--unnamed-line-spacing-17) var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-000000);
+  text-align: left;
+  margin-top: -20px;
+  font: normal normal bold 12px/17px Manrope;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+
+.ui.selection.dropdown {
+  cursor: pointer;
+  word-wrap: break-word;
+  line-height: 1em;
+  white-space: normal;
+  outline: 0;
+  transform: rotateZ(0);
+  min-width: 14em;
+  min-height: 60px;
+  background: #fff;
+  display: inline-block;
+  padding-top: 20px !important;
+  color: rgba(0,0,0,.87);
+  box-shadow: none;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  transition: box-shadow .1s ease,width .1s ease;
+}
+
+.ui.fluid.dropdown>.dropdown.icon {
+  float: right;
+  margin-top: 4px;
+}
+
+.tags-container {
+  height: 55px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 2px solid #00000024;
+  border-radius: 6px;
+  padding: 15px;
+  opacity: 1;
+}
+
+.tag-span {
+  margin-left: 15px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 10px/14px var(--unnamed-font-family-manrope);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  text-align: left;
+  font: normal normal normal 10px/14px Manrope;
+  letter-spacing: 0px;
+  color: #FFFFFFB3;
+  padding: 5px;
+  height: 25px;
+  background: #37373B 0% 0% no-repeat padding-box;
+  border-radius: 44px;
+  opacity: 1;
+}
+
+.x {
+  font-size: 12px;
+  cursor: pointer;
+  color: #FFFFFF;
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.cancel-button {}
+
+.next-button {}
+
+.prev-button {}
