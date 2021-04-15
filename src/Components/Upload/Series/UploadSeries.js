@@ -7,17 +7,18 @@ import "./UploadSeries.css";
 const UploadSeries = () => {
   const [ years, setYears ] = useState([]);
   const [ tagsState, setTagsState ] = useState([ "Sex", "Dating", "Romance", "Relationship" ]);
+  const [ count, setCount ] = useState(1);
 
   useEffect(() => {
     var max = new Date().getFullYear()
-    var min = max - 50
-    var years = []
+    var min = max - 50;
+    var years = [];
   
     for (var i = max; i >= min; i--) {
-      years.push(i)
+      years.push(i);
     }
     setYears(years);
-  }, [])
+  }, []);
   
   const maturityRating = [
     { key: '9', text: '9+', value: '9+' },
@@ -46,9 +47,11 @@ const UploadSeries = () => {
     setTagsState(newTag);
   }
 
+  
+
   return (
     <div>
-      <Card>
+      <Card id="series-card">
         <CardBody>
           <Row className="mb-5">
             <Col xs="12" xl="12">
@@ -75,12 +78,12 @@ const UploadSeries = () => {
             <Form.TextArea label="Casts" placeholder="The quick, brown fox jumps over a lazy dog." />
           </Form>
 
-          <Row>
+          <Row className="mt-5">
             <Col xs="6">
-              <Button className="cancel-button">Cancel</Button>
+              <Button className="back-button">Go Back</Button>
             </Col>
             <Col xs="3">
-              <Button className="prev-button">Previous</Button>
+              <Button className="draft-button">Save Draft</Button>
             </Col>
             <Col xs="3">
               <Button className="next-button">Next</Button>

@@ -1,0 +1,25 @@
+
+.main-upload-container {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.file-uploader {
+  top: 259px!important;
+  left: 80px !important;
+  width: 911px !important;
+  height: 260px !important;
+  background: #F0536614 0% 0% no-repeat padding-box !important;
+  border: 2px dashed #F05366 !important;
+  border-radius: 16px !important;
+  opacity: 1 !important;
+  margin-bottom: 30px;
+}
+
+.container {
+  background: none!important;
+  opacity: 1;
+  min-height: 100px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
