@@ -7,8 +7,8 @@
 .file-uploader {
   top: 259px!important;
   left: 80px !important;
-  width: 911px !important;
-  height: 260px !important;
+  width: 100% !important;
+  height: 400px !important;
   background: #F0536614 0% 0% no-repeat padding-box !important;
   border: 2px dashed #F05366 !important;
   border-radius: 16px !important;

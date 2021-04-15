@@ -18,7 +18,7 @@ const SeriesCover = ({
     <div className="main-upload-container">
       <Row className="mt-3">
         <Col xs="12" xl="12">
-          <label>Upload video poster</label>
+          <label>Upload Series Cover Photo</label>
           <div {...getRootProps()} className="text-center file-uploader">
             {poster && poster.length > 0 ? <img src={poster} alt="identity" style={{ width: "100%", height: "100%" }} /> : (
               <>
@@ -32,14 +32,14 @@ const SeriesCover = ({
               </>
             )}
           </div>
-          {Array.isArray(errorMsg) && errorMsg.length > 0 ? errorMsg.map((error, i) => error.param === "poster" ? 
-            (<><Alert color="danger" key={i} style={{ color: "#ff0000", fontSize: "12px", marginTop: "15px" }}>{error.msg}</Alert> <br /></>) : null): null}
+          {/* {Array.isArray(errorMsg) && errorMsg.length > 0 ? errorMsg.map((error, i) => error.param === "poster" ? 
+            (<><Alert color="danger" key={i} style={{ color: "#ff0000", fontSize: "12px", marginTop: "15px" }}>{error.msg}</Alert> <br /></>) : null): null} */}
         </Col>
       </Row>
       <Row>
         <Col xs="12" xl="10">
-          {video.posterLoading ? <Alert color="info">Uploading video poster. Please wait... <Spinner style={{ color: "#F05366" }} /></Alert> : 
-          video.posterSuccess ? <Alert color="success">Poster success uploaded</Alert> : null}
+          {/* {video.posterLoading ? <Alert color="info">Uploading video poster. Please wait... <Spinner style={{ color: "#F05366" }} /></Alert> : 
+          video.posterSuccess ? <Alert color="success">Poster success uploaded</Alert> : null} */}
         </Col>
       </Row>
     </div>

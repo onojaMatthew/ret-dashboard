@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, Col, Row } from "reactstrap";
 import { Button, Form } from "semantic-ui-react";
+import SeriesCover from "./SeriesCover";
+import SeriesData from "./SeriesData";
 
 import "./UploadSeries.css";
 
@@ -27,7 +29,8 @@ const UploadSeries = () => {
     { key: '18', text: '18+', value: '18+' },
   ]
 
-  const yearOptions = years.map((y, i) => ({ key: i, text: y, value: y }))
+  const yearOptions = years.map((y, i) => ({ key: i, text: y, value: y }));
+
   const industries = [
     { key: 'b', text: 'Bollywood', value: 'bollywood' },
     { key: 'h', text: 'Hollywood', value: 'hollywood' },
@@ -47,7 +50,7 @@ const UploadSeries = () => {
     setTagsState(newTag);
   }
 
-  
+
 
   return (
     <div>
@@ -59,34 +62,31 @@ const UploadSeries = () => {
               <p className="series-second-level-text">The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz.</p>
             </Col>
           </Row>
-          <Form>
-            <Form.Group>
-              <Form.Input width="six" fluid label="Series Title" placeholder="Series Title" />
-              <Form.Input width="four" fluid label="Studio" placeholder="Studio" />
-            </Form.Group>
-            <Form.Group>
-              <Form.Select className="series-select" width="six" options={maturityRating} fluid label="Maturity Rating" placeholder="Select PG" />
-              <Form.Select className="series-select" width="six" options={yearOptions && yearOptions} fluid label="Production Year" placeholder="Select production year" />
-              <Form.Select className="series-select" width="six" options={industries} fluid label="Industry" placeholder="Select Industry" />
-              <Form.Select className="series-select" width="six" options={genreOptions} fluid label="Genre" placeholder="Select Genre" />
-            </Form.Group>
-            <div className="mt-3">Tags</div>
-            <div className="tags-container mb-3">
-              {tagsState.map((t, i) => <span className="tag-span" key={i}>{t} <span onClick={() => onRemoveTags(i)} className="x">x</span></span>)}
-            </div>
-            <Form.TextArea label="Description" placeholder="The quick, brown fox jumps over a lazy dog." />
-            <Form.TextArea label="Casts" placeholder="The quick, brown fox jumps over a lazy dog." />
-          </Form>
-
+          {
+            count === 1 ? 
+            <SeriesData 
+              onRemoveTags={onRemoveTags} 
+              yearOptions={yearOptions} 
+              industries={industries} 
+              genreOptions={genreOptions} 
+              maturityRating={maturityRating} 
+              tagsState={tagsState}
+            /> : 
+            count === 2 ? <SeriesCover /> :
+            null
+          }
           <Row className="mt-5">
             <Col xs="6">
-              <Button className="back-button">Go Back</Button>
+              <Button onClick={() => setCount(count - 1)} className="back-button">Go Back</Button>
             </Col>
             <Col xs="3">
               <Button className="draft-button">Save Draft</Button>
             </Col>
             <Col xs="3">
-              <Button className="next-button">Next</Button>
+              {count === 2 ?
+              <Button onClick={() => setCount(count + 1)} className="next-button">Upload</Button> :
+              <Button onClick={() => setCount(count + 1)} className="next-button">Next</Button>
+              }
             </Col>
           </Row>
         </CardBody>
