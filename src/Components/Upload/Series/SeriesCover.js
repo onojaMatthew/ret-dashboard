@@ -42,6 +42,29 @@ const SeriesCover = ({
           video.posterSuccess ? <Alert color="success">Poster success uploaded</Alert> : null} */}
         </Col>
       </Row>
+
+      <Row>
+        <Col xs="12" xl="12">
+          <div className="new-episode-button">
+            <Row>
+              <Col xs="12" xl="12">
+                <p>Season 1</p>
+                <p id="episode">2 Episode</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12" xl="8"></Col>
+              <Col xs="12" xl="4">
+                <Row>
+                  <Col xs="4" xl="2" className="delete">Delete</Col>
+                  <Col xs="4" xl="3" className="manage">Manage</Col>
+                  <Col xs="4" xl="4" className="add">Add new episode</Col>
+                </Row>
+              </Col>
+            </Row>
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 }
