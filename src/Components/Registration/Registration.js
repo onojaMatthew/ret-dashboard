@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Card, CardBody, Form, Spinner } from "reactstrap";
-import { Input, Select } from "semantic-ui-react";
+import { Input, Select, Message, Icon } from "semantic-ui-react";
 import { Button, Divider } from "antd";
 import { 
   FacebookLoginButton,
@@ -28,6 +28,7 @@ const Registration = () => {
   const [ country, setCountry ] = useState("");
 
   const handleSubmit = () => {
+    setErrors("");
     const data = {
       country,
       email,
@@ -40,6 +41,7 @@ const Registration = () => {
     }
     
     dispatch(registration(data));
+    
   }
 
   useEffect(() => {
@@ -99,9 +101,14 @@ const Registration = () => {
     }
   }, [ account ]);
   
-  console.log(countryCode, " the country code");
   return (
     <div className="reg-container">
+      <Row>
+        <Col xs="12" xl="12">
+          {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "phone" ? 
+            (<Message color="red" key={i} style={{ padding: "20px", textAlign: "center", color: "#ff0000", fontSize: "16px", marginTop: "-40px" }}>{error.message}</Message>) : null): null}
+        </Col>
+      </Row>
       <Row className="justify-content-center">
         <Col xs="11" xl="3">
           <div className="text-center mb-4">
@@ -121,40 +128,40 @@ const Registration = () => {
                       <input />
                     </Input>
                     {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "fullName" ? 
-                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "20px" }}>{error.message}</span> <br /></>) : null): null}
+                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "0px" }}>{error.message}</span> <br /></>) : null): null}
                   </Col>
                 </Row>
-                <Row>
+                <Row className="mt-4">
                   <Col xs="12" xl="12">
                     <label htmlFor="phone">Phone Number</label>
                     <Input id="country-code" type='text' placeholder='Phone Number'>
                       <Select onChange={(e) => handleCode(e)} compact options={options} defaultValue="+254" />
                       <input value={phone} onChange={(e) => handlePhone(e)} />
                     </Input>
-                    {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "phone" ? 
-                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "20px" }}>{error.message}</span> <br /></>) : null): null}
+                    {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "number" ? 
+                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "0px" }}>{error.message}</span> <br /></>) : null): null}
                     {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "code" ? 
-                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "20px" }}>{error.message}</span> <br /></>) : null): null}
+                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "0px" }}>{error.message}</span> <br /></>) : null): null}
                   </Col>
                 </Row>
-                <Row>
+                <Row className="mt-4">
                   <Col xs="12" xl="12">
                     <label htmlFor="email">Email Address</label>
                     <Input placeholder="example@mail.com" value={email} onChange={(e) => handleEmail(e)} id="email" type="email">
                       <input />
                     </Input>
                     {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "email" ? 
-                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "20px" }}>{error.message}</span> <br /></>) : null): null}
+                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "0px" }}>{error.message}</span> <br /></>) : null): null}
                   </Col>
                 </Row>
-                <Row>
+                <Row className="mt-4">
                   <Col xs="12" xl="12">
                     <label htmlFor="password">Password</label>
                     <Input value={password} onChange={(e) => handlePassword(e)} id="password" type="password" placeholder="********">
                       <input />
                     </Input>
                     {Array.isArray(errors) && errors.length > 0 ? errors.map((error, i) => error.key === "password" ? 
-                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "20px" }}>{error.message}</span> <br /></>) : null): null}
+                    (<><span key={i} style={{ color: "#ff0000", fontSize: "12px", marginLeft: "0px" }}>{error.message}</span> <br /></>) : null): null}
                   </Col>
                 </Row>
                 <Row className="mt-4">
@@ -162,7 +169,6 @@ const Registration = () => {
                     {account.loading ? (
                       <Button className="signup-button">Please wait... <Spinner /></Button>
                     ) : <Button className="signup-button" onClick={handleSubmit}>sign up</Button>}
-                    
                   </Col>
                 </Row>
               </Form>
