@@ -34,7 +34,7 @@ export const registrationFailed = (error) => {
 export const registration = (data) => {
   return dispatch => {
     dispatch(registrationStart());
-    fetch(`https://auth-ret.ieapis.com/v1/account/register`, {
+    fetch(`https://auth-ret.ieapis.com/v1/admin/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ export const loginFailed = (error) => {
 export const login = (data) => {
   return dispatch => {
     dispatch(loginStart());
-    fetch(`${BASE_URL}/account/login`, {
+    fetch(`https://auth-ret.ieapis.com/v1/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

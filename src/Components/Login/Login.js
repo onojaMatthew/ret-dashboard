@@ -43,7 +43,7 @@ const Login = () => {
 
   useEffect(() => {
     if (account.login_success) {
-      window.location.href="/";
+      window.location.href="/dashboard";
     }
   }, [ account ]);
 
