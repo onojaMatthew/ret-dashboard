@@ -159,7 +159,7 @@ export const getVideosFailed = (error) => {
 export const getVideos = (data) => {
   return dispatch => {
     dispatch(getVideosStart());
-    fetch(`https://video-ret.ieapis.com/api/v1/video/all?page=${data.page}&category=${data.category}`, {
+    fetch(`${VIDEO_SERVICE_API}?page=${data.page}&category=${data.category}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -328,7 +328,7 @@ export const getAllfailed = (error) => {
 export const getAll = (data) => {
   return dispatch => {
     dispatch(getAllStart());
-    fetch(`${VIDEO_SERVICE_API}/video/all_videos?page=${data && data.page ? data.page: ""}`, {
+    fetch(`https://video-ret.ieapis.com/api/v1/video/all_videos?page=${data && data.page ? data.page: ""}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

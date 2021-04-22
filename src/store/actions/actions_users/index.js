@@ -18,7 +18,7 @@ export const FETCH_ADMINS_FAILED = "FETCH_ADMINS_FAILED";
 
 const BASE_URL = process.env.REACT_APP_AUTH_SERVICE_API;
 
-const token = localAuth().token && localAuth().token;
+const token = localAuth().authorization && localAuth().authorization;
 
 export const fetchUsersStart = () => {
   return {

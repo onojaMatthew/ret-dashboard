@@ -7,13 +7,14 @@ import BarChart from "../Chart/BarChart";
 import "./Dashboard.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../store/actions/actions_users";
-import { getVideos } from "../../store/actions/actions_videos";
+import { getAll } from "../../store/actions/actions_videos";
 
 const Users = () => {
   const accounts = useSelector(state => state.accounts);
   const videos = useSelector(state => state.video);
   const dispatch = useDispatch();
   const [ userList, setUserList ] = useState([]);
+  const [ videoList, setVideoList ] = useState([]);
 
   const dataArray = [ 45, 30, 19, 28, 35, 40, 47, 50 ];
 
@@ -21,15 +22,20 @@ const Users = () => {
     const data = { limit: 5, skip: 0 };
     const query = { page: 0 }
     dispatch(fetchUsers(data));
-    dispatch(getVideos(query));
+    dispatch(getAll(query));
   }, [ dispatch ]);
 
   useEffect(() => {
     if (accounts.usersSuccess) {
-      
-      setUserList(accounts.users && accounts.users);
+      setUserList(accounts.users && accounts.users.docs && accounts.users.docs);
     }
   }, [ accounts ]);
+
+  // useEffect(() => {
+  //   if (accounts.usersSuccess) {
+  //     setUserList(accounts.users && accounts.users.docs && accounts.users.docs);
+  //   }
+  // }, [ accounts ]);
 
   console.log(userList, " the accounts")
   console.log(videos, " the videos")
