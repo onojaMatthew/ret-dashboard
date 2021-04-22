@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Col, Row, Alert, Spinner, } from "reactstrap";
+import { Col, Row } from "reactstrap";
 import { useDropzone } from "react-dropzone";
 
 import "./PosterUploader.css";
@@ -7,8 +7,8 @@ import "./PosterUploader.css";
 const SeriesCover = ({
   handleVidoeoPoster,
   poster,
-  errorMsg,
-  video,
+  // errorMsg,
+  // video,
 }) => {
 
   const onDrop = useCallback(acceptedFiles => {}, []);

@@ -14,7 +14,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 let store;
 
-process.env.REACT_APP_NODE_ENV === "development" ? store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger))) :
+process.env.NODE_ENV === "development" ? store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk, logger))) :
 store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(

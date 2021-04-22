@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Card, CardBody, Form, Spinner } from "reactstrap";
-import { Input, Select, Message, Icon } from "semantic-ui-react";
+import { Input, Select, Message } from "semantic-ui-react";
 import { Button, Divider } from "antd";
 import { 
   FacebookLoginButton,

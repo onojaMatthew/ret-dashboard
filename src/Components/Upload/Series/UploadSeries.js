@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, Col, Row } from "reactstrap";
-import { Button, Form } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import SeriesCover from "./SeriesCover";
 import SeriesData from "./SeriesData";
 

@@ -8,7 +8,7 @@ export const LOGIN_START = "LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILED = "LOGIN_FAILED";
 
-const BASE_URL = process.env.REACT_APP_AUTH_SERVICE_API;
+// const BASE_URL = process.env.REACT_APP_AUTH_SERVICE_API;
 
 // Registration redux action types
 export const registrationStart = () => {

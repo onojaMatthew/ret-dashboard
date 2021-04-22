@@ -29,7 +29,7 @@ import {
   REVIEW_START,
   REVIEW_SUCCESS,
   REVIEW_FAILED,
-} from "../../actions/video";
+} from "../../actions/actions_videos";
 
 const initialState = {
   videos: [],

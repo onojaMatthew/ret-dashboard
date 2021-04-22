@@ -3,19 +3,15 @@ import { localAuth } from "../../../helper/authenticate";
 export const FETCH_USERS_START = "FETCH_USERS_START";
 export const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS";
 export const FETCH_USERS_FAILED = "FETCH_USERS_FAILED";
-
 export const USER_DETAILS_START = "USER_DETAILS_START";
 export const USER_DETAILS_SUCCESS = "USER_DETAILS_SUCCESS";
 export const USER_DETAILS_FAILED = "USER_DETAILS_FAILED";
-
 export const FETCH_ADMIN_START = "FETCH_ADMIN_START";
 export const FETCH_ADMIN_SUCCESS = "FETCH_ADMIN_SUCCESS";
 export const FETCH_ADMIN_FAILED = "FETCH_ADMIN_FAILED";
-
 export const FETCH_ADMIN_DETAILS_START = "FETCH_ADMIN_DETAILS_START";
 export const FETCH_ADMIN_DETAILS_SUCCESS = "FETCH_ADMIN_DETAILS_SUCCESS";
 export const FETCH_ADMIN_DETAILS_FAILED = "FETCH_ADMIN_DETAILS_FAILED";
-
 export const FETCH_ADMINS_START = "FETCH_ADMINS_START";
 export const FETCH_ADMINS_SUCCESS = "FETCH_ADMINS_SUCCESS";
 export const FETCH_ADMINS_FAILED = "FETCH_ADMINS_FAILED";
@@ -47,7 +43,7 @@ export const fetchUsersFailed = (error) => {
 export const fetchUsers = (data) => {
   return dispatch => {
     dispatch(fetchUsersStart());
-    fetch(`${BASE_URL}/account/?skip=${data.skip}&limit=${data.limit}`, {
+    fetch(`https://auth-ret.ieapis.com/v1/account/?skip=${data.skip}&limit=${data.limit}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +57,7 @@ export const fetchUsers = (data) => {
         return dispatch(fetchUsersSuccess(resp));
       })
       .catch(err => {
-        return dispatch(err.message);
+        return dispatch(fetchUsersFailed(err.message));
       });
   }
 }
@@ -93,7 +89,8 @@ export const userDetails = (userId) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        ACCEPT: "application/json"
+        ACCEPT: "application/json",
+        "authorization": `Bearer ${token}`
       }
     })
       .then(response => response.json())

@@ -5,7 +5,7 @@ import {
   SELECT_PLAN_START,
   SELECT_PLAN_SUCCESS,
   SELECT_PLAN_FAILED
-} from "../../actions/subscription";
+} from "../../actions/actions_subscription";
 
 const initialState = {
   plans: [],

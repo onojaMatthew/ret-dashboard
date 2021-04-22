@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row } from "reactstrap";
 import { Form } from "semantic-ui-react";
 
 const SeriesData = ({
