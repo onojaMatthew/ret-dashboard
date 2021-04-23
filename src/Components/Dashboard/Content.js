@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "semantic-ui-react";
 import { Card, CardBody, Row, Col } from "reactstrap";
 
 import "./Dashboard.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getAll } from "../../store/actions/actions_videos";
 
 const Content = () => {
+  const dispatch = useDispatch();
+  const videos = useSelector(state => state.video);
+  const [ videoList, setVideoList ] = useState([]);
 
+  useEffect(() => {
+    dispatch(getAll());
+  }, [ dispatch ]);
+
+  useEffect(() => {
+    if (videos.allSuccess) {
+      setVideoList(videos.all && videos.all.pageOfItems)
+    }
+  }, [ videos ]);
+
+  console.log(videoList, " the video list")
   return (
     <div>
       <Row>
@@ -77,153 +93,25 @@ const Content = () => {
 
       {/* Video list */}
       <Row className="mt-4">
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>1</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>2</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>3</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
+        { videoList.length > 0 ? videoList.map((v,i) => (
+          <Col xs="12" xl="4" key={i} className="mt-4">
+            <Card className="content-video-list">
+                <Row>
+                  <Col xs="2" xl="1">
+                    <p>{i+1}</p>
+                  </Col>
+                  <Col xs="5" xl="8">
+                    <p>{v.title}</p>
+                  </Col>
+                  <Col xs="4" xl="3">
+                    <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
+                  </Col>
+                </Row>
+            
+            </Card>
+          </Col>
+        )) : <p className="text-center">No records to display</p>}
       </Row>
-      <Row className="mt-4">
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>4</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>5</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>6</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>7</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>8</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-
-        <Col xs="12" xl="4">
-          <Card className="content-video-list">
-            <Row>
-              <Col xs="8" xl="1">
-                <p>9</p>
-              </Col>
-              <Col xs="4" xl="8">
-                <p>A man called God</p>
-              </Col>
-              <Col xs="4" xl="3">
-                <p><Icon name="eye" size="small" /> <span className="views-number">50,462</span></p>
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-      </Row>
-
       {/* <Row className="mt-4">
         <Col xs="12" xl="10">
           <Card className="bar-graph-card">

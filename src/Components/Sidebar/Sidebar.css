@@ -79,3 +79,9 @@
   color: #FFFFFF66;
   opacity: 1;
 }
+
+@media only screen and (max-width: 490px) {
+  .main-sidebar-container {
+    display: none;
+  }
+}

@@ -10,7 +10,7 @@ const { SubMenu } = Menu;
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="main-sidebar-container">
       <Sider  className="sidebar-container">
         <div className="logo">
           <img src={Logo} alt="App logo" className="app-logo" />

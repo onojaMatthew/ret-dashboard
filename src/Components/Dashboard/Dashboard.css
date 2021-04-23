@@ -175,7 +175,7 @@
 }
 
 .content-video-list {
-  height: 69px;
+  overflow: hidden;
   background: #FFFFFF 0% 0% no-repeat padding-box;
   border-radius: 15px;
   padding-left: 26.5px;
