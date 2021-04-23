@@ -1,13 +1,10 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
 import { Card, CardBody, Row, Col } from "reactstrap";
-import BarChart from "../Chart/BarChart";
 
 import "./Dashboard.css";
 
 const Content = () => {
-
-  const dataArray = [ 45, 30, 19, 28, 35, 40, 47, 50 ];
 
   return (
     <div>
@@ -227,7 +224,7 @@ const Content = () => {
         </Col>
       </Row>
 
-      <Row className="mt-4">
+      {/* <Row className="mt-4">
         <Col xs="12" xl="10">
           <Card className="bar-graph-card">
             <CardBody>
@@ -251,7 +248,7 @@ const Content = () => {
             </Card>
           </Row>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 }

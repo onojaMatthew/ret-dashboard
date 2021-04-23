@@ -10,6 +10,7 @@ import Finance from "./Finance";
 import Users from "./Users";
 import User from "../Users/Users";
 import Upload from "../Upload/Upload";
+import Contributor from "../Contributor/Contributor";
 
 const Dashboard = (props) => {
   return (
@@ -25,6 +26,7 @@ const Dashboard = (props) => {
         <Route exact path={`${props.match.url}/realityshows`} render={(props) => <Reality {...props} />} />
         <Route exact path={`${props.match.url}/users`} render={(props) => <User {...props} />} />
         <Route path={`${props.match.url}/upload`} render={(props) => <Upload {...props} />} />
+        <Route path={`${props.match.url}/contributor`} render={(props) => <Contributor {...props} />} />
       </Switch>
     </div>
   );
